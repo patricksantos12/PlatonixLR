@@ -51,7 +51,7 @@ const Register = () => {
                 <SubTitle>Account Register</SubTitle>
 
                 <Formik
-                    initialValues={{serialnumber: '', password: '', confirmPassword: '' }}
+                    initialValues={{ownername: '', serialnumber: '', password: '', confirmPassword: '' }}
                     onSubmit={(values) => {
                         console.log(values);
                     }}
@@ -64,6 +64,16 @@ const Register = () => {
                         onChangeText={handleChange('serialnumber')}
                         onBlur={handleBlur('serialnumber')}
                         value={values.serialnumber}
+                    />
+
+                        <MyTextInput 
+                        label="Car Owner Name"
+                        icon="person"
+                        placeholder="Enter Name"
+                        placeholderTextColor={darkLight}
+                        onChangeText={handleChange('ownername')}
+                        onBlur={handleBlur('ownername')}
+                        value={values.ownername}
                     />
 
                         <MyTextInput 
