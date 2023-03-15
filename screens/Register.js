@@ -38,7 +38,7 @@ const {brand, darkLight, primary} = Colors;
 
 
 
-const Login = () => {
+const Register = () => {
 
     const [hidePassword, setHidePassword] = useState(true);
 
@@ -46,12 +46,12 @@ const Login = () => {
         <StyledContainer>
             <StatusBar style="dark" />
             <InnerContainer>
-                <PageLogo resizeMode="cover" source={require('./../assets/img/Logo.png')}/>
+           
                 <PageTitle>Platonix</PageTitle>
-                <SubTitle>Device Login</SubTitle>
+                <SubTitle>Account Register</SubTitle>
 
                 <Formik
-                    initialValues={{serialnumber: '', password: ''}}
+                    initialValues={{serialnumber: '', password: '', confirmPassword: '' }}
                     onSubmit={(values) => {
                         console.log(values);
                     }}
@@ -64,8 +64,6 @@ const Login = () => {
                         onChangeText={handleChange('serialnumber')}
                         onBlur={handleBlur('serialnumber')}
                         value={values.serialnumber}
-                        
-
                     />
 
                         <MyTextInput 
@@ -82,19 +80,30 @@ const Login = () => {
                         setHidePassword={setHidePassword}
 
                     />
+
+                        <MyTextInput 
+                        label="Confirm Password"
+                        icon="lock"
+                        placeholder="* * * * * * * * * * * * * * *"
+                        placeholderTextColor={darkLight}
+                        onChangeText={handleChange('confirmPassword')}
+                        onBlur={handleBlur('confirmPassword')}
+                        value={values.confirmPassword}
+                        secureTextEntry={hidePassword}
+                        isPassword={true}
+                        hidePassword={hidePassword}
+                        setHidePassword={setHidePassword}
+
+                    />
                     <MsgBox>...</MsgBox>
                     <StyledButton onPress={handleSubmit}>
-                        <ButtonText>Access Device</ButtonText>
+                        <ButtonText>Register</ButtonText>
                     </StyledButton>
                     <Line />
-                    <StyledButton help={true} onPress={handleSubmit}>
-                            <Fontisto name="mobile-alt" color={primary} size={25}/>
-                        <ButtonText help={true}>Need Help?</ButtonText>
-                    </StyledButton>
                     <ExtraView>
-                        <ExtraText>Not registered? </ExtraText>
+                        <ExtraText>Already Registered? </ExtraText>
                         <TextLink>
-                            <TextLinkContent>Register Here</TextLinkContent>
+                            <TextLinkContent>Access Device Here</TextLinkContent>
                         </TextLink>
                     </ExtraView>
 
@@ -123,4 +132,4 @@ const MyTextInput = ({label, icon, isPassword, hidePassword, setHidePassword, ..
 
 }
 
-export default Login;
+export default Register;
