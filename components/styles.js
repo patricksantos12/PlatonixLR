@@ -28,6 +28,7 @@ export const InnerContainer = styled.View`
     align-items: center;
 `;
 
+
 export const PageLogo = styled.Image`
     width: 250px;
     height: 200px;
