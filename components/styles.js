@@ -38,7 +38,15 @@ export const WelcomeContainer = styled(InnerContainer)`
 export const PageLogo = styled.Image`
     width: 250px;
     height: 200px;
+    margin: auto;
 `;
+
+export const PicturesLogo = styled.Image`
+    width: 250px;
+    height: 250px;
+    margin: auto;
+`;
+
 
 export const Avatar = styled.Image`
     width: 100px;
@@ -73,6 +81,8 @@ export const SubTitle = styled.Text`
     letter-spacing: 1px;
     font-weight: bold;
     color: ${tertiary};
+    margin: auto;
+    
 
     ${(props) => props.welcome && 'margin-bottom: 5px; font-weight:normal;'}
 `;

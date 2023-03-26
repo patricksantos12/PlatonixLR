@@ -4,8 +4,9 @@ import React from 'react';
 import Login from './screens/Login';
 import Register from './screens/Register';
 import Welcome from './screens/Welcome';
+import Help from './screens/Help';
 
 export default function App() {
-  return <Login />;
+  return <Help />;
 }
  

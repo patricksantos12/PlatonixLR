@@ -40,7 +40,7 @@ const {brand, darkLight, primary} = Colors;
 // keyboard avoiding view
 import KeyboardAvoidingWrapper from '../components/KeyboardAvoidingWrapper';
 
-const Menu = () => {
+const Help = () => {
 
     const [hidePassword, setHidePassword] = useState(true);
 
@@ -48,10 +48,11 @@ const Menu = () => {
         <KeyboardAvoidingWrapper><StyledContainer>
             <StatusBar style="dark" />
             <InnerContainer>
-                <PageLogo resizeMode="cover" source={require('./../assets/img/Logo.png')}/>
-                <PageTitle>Platonix</PageTitle>
+            <PicturesLogo resizeMode="cover" source={require('./../assets/img/Help.png')}/>
+                <PageTitle>Need Help?</PageTitle>
                 <Line />
-                
+                <SubTitle>Contact our Develpers</SubTitle>
+                <Line />
 
                 <Formik
                     initialValues={{serialnumber: '', password: '', enterName: ''}}
@@ -60,26 +61,24 @@ const Menu = () => {
                     }}
                 >{({handleChange, handleBlur, handleSubmit, values}) => (<StyledFormArea>
                     
-                    <PicturesLogo resizeMode="cover" source={require('./../assets/img/ImageProcessing.png')}/>
-                    <StyledButton onPress={handleSubmit}>
-                        <ButtonText>Image Processing</ButtonText>
-                    </StyledButton>
-
-                    <PicturesLogo resizeMode="cover" source={require('./../assets/img/DataAnalytics.png')}/>
-                    <StyledButton onPress={handleSubmit}>
-                        <ButtonText>Data Analytics</ButtonText>
-                    </StyledButton>
-
-                    <PicturesLogo resizeMode="cover" source={require('./../assets/img/TextEntry.png')}/>
-                    <StyledButton onPress={handleSubmit}>
-                        <ButtonText>Text-Entry Processing</ButtonText>
-                    </StyledButton>
-                    
-                    <StyledButton onPress={handleSubmit}>
-                        <ButtonText>Text-Entry Processing</ButtonText>
-                    </StyledButton>
+                    <PicturesLogo resizeMode="cover" source={require('./../assets/img/nicole.jpg')}/>
+                    <PageTitle>Nicole Mercado</PageTitle>
+                    <SubTitle>Info</SubTitle>
+                    <Line />
+                    <PicturesLogo resizeMode="cover" source={require('./../assets/img/albert.jpg')}/>
+                    <PageTitle>Albert Tongol</PageTitle>
+                    <SubTitle>Info</SubTitle>
+                    <Line />
+                    <PicturesLogo resizeMode="cover" source={require('./../assets/img/pat.jpg')}/>
+                    <PageTitle>Patrick Santos</PageTitle>
+                    <SubTitle>Info</SubTitle>
+                    <Line />
+                    <PageTitle>or</PageTitle>
                    
-                    
+                    <StyledButton onPress={handleSubmit}>
+                        <ButtonText>Play a Demo Video</ButtonText>
+                    </StyledButton>
+
                 </StyledFormArea>
                 )}
                 </Formik>
@@ -90,5 +89,4 @@ const Menu = () => {
     );
 };
 
-
-export default Menu;
+export default Help;
