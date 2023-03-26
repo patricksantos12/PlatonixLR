@@ -36,14 +36,15 @@ import {View} from 'react-native';
 // colors
 const {brand, darkLight, primary} = Colors;
 
-
+// keyboard avoiding view
+import KeyboardAvoidingWrapper from '../components/KeyboardAvoidingWrapper';
 
 const Login = () => {
 
     const [hidePassword, setHidePassword] = useState(true);
 
     return (
-        <StyledContainer>
+        <KeyboardAvoidingWrapper><StyledContainer>
             <StatusBar style="dark" />
             <InnerContainer>
                 <PageLogo resizeMode="cover" source={require('./../assets/img/Logo.png')}/>
@@ -51,13 +52,13 @@ const Login = () => {
                 <SubTitle>Device Login</SubTitle>
 
                 <Formik
-                    initialValues={{serialnumber: '', password: ''}}
+                    initialValues={{serialnumber: '', password: '', enterName: ''}}
                     onSubmit={(values) => {
                         console.log(values);
                     }}
                 >{({handleChange, handleBlur, handleSubmit, values}) => (<StyledFormArea>
                     <MyTextInput 
-                        label="Serial Number"
+                        label="Device Serial Number"
                         icon="number"
                         placeholder="Enter the Serial Number"
                         placeholderTextColor={darkLight}
@@ -69,7 +70,7 @@ const Login = () => {
                     />
 
                         <MyTextInput 
-                        label="Password"
+                        label=" Device Password"
                         icon="lock"
                         placeholder="* * * * * * * * * * * * * * *"
                         placeholderTextColor={darkLight}
@@ -82,6 +83,19 @@ const Login = () => {
                         setHidePassword={setHidePassword}
 
                     />
+                    <MyTextInput 
+                        label="Name"
+                        icon="person"
+                        placeholder="Enter your name"
+                        placeholderTextColor={darkLight}
+                        onChangeText={handleChange('enterName')}
+                        onBlur={handleBlur('enterName')}
+                        value={values.enterName}
+                        
+
+                    />
+
+
                     <MsgBox>...</MsgBox>
                     <StyledButton onPress={handleSubmit}>
                         <ButtonText>Access Device</ButtonText>
@@ -91,17 +105,15 @@ const Login = () => {
                             <Fontisto name="mobile-alt" color={primary} size={25}/>
                         <ButtonText help={true}>Need Help?</ButtonText>
                     </StyledButton>
-                    <ExtraView>
-                        <ExtraText>Not registered? </ExtraText>
-                        <TextLink>
-                            <TextLinkContent>Register Here</TextLinkContent>
-                        </TextLink>
-                    </ExtraView>
-
-                </StyledFormArea>)}
+                   
+                    
+                </StyledFormArea>
+                )}
                 </Formik>
             </InnerContainer>
         </StyledContainer>
+        </KeyboardAvoidingWrapper>
+       
     );
 };
 
