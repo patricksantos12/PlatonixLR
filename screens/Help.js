@@ -28,7 +28,11 @@ import {
     ExtraView,
     ExtraText,
     TextLink,
-    TextLinkContent
+    TextLinkContent,
+    HelpLogo,
+    PageTitle1,
+    PageTitle2,
+    PageTitle3,
 
 } from './../components/styles';
 
@@ -49,7 +53,7 @@ const Help = () => {
             <StatusBar style="dark" />
             <InnerContainer>
             <PicturesLogo resizeMode="cover" source={require('./../assets/img/Help.png')}/>
-                <PageTitle>Need Help?</PageTitle>
+                <PageTitle3>Need Help?</PageTitle3>
                 <Line />
                 <SubTitle>Contact our Develpers</SubTitle>
                 <Line />
@@ -61,19 +65,29 @@ const Help = () => {
                     }}
                 >{({handleChange, handleBlur, handleSubmit, values}) => (<StyledFormArea>
                     
-                    <PicturesLogo resizeMode="cover" source={require('./../assets/img/nicole.jpg')}/>
-                    <PageTitle>Nicole Mercado</PageTitle>
-                    <SubTitle>Info</SubTitle>
+                    <HelpLogo resizeMode="cover" source={require('./../assets/img/nicole.jpg')}/>
+                    <PageTitle3>Nicole Mercado</PageTitle3>
+                    <SubTitle>email:</SubTitle>
+                    <SubTitle>nicole@gmail.com</SubTitle>
+                    <SubTitle>contact number:</SubTitle>
+                    <SubTitle>09545454</SubTitle>
                     <Line />
-                    <PicturesLogo resizeMode="cover" source={require('./../assets/img/albert.jpg')}/>
-                    <PageTitle>Albert Tongol</PageTitle>
-                    <SubTitle>Info</SubTitle>
+                    <HelpLogo resizeMode="cover" source={require('./../assets/img/albert.jpg')}/>
+                    <PageTitle3>Albert Tongol</PageTitle3>
+                    <SubTitle>email:</SubTitle>
+                    <SubTitle>albert@gmail.com</SubTitle>
+                    <SubTitle>contact number:</SubTitle>
+                    <SubTitle>0959595959</SubTitle>
                     <Line />
-                    <PicturesLogo resizeMode="cover" source={require('./../assets/img/pat.jpg')}/>
-                    <PageTitle>Patrick Santos</PageTitle>
-                    <SubTitle>Info</SubTitle>
+                    <HelpLogo resizeMode="cover" source={require('./../assets/img/pat.jpg')}/>
+                    <PageTitle3>Patrick Santos</PageTitle3>
+                    <SubTitle>email:</SubTitle>
+                    <SubTitle>patricksantos2627@gmail.com</SubTitle>
+                    <SubTitle>contact number:</SubTitle>
+                    <SubTitle>09519898644</SubTitle>
+                
                     <Line />
-                    <PageTitle>or</PageTitle>
+                    <PageTitle3>or</PageTitle3>
                    
                     <StyledButton onPress={handleSubmit}>
                         <ButtonText>Play a Demo Video</ButtonText>

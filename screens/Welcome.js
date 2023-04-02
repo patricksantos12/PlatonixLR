@@ -28,7 +28,8 @@ import {
     ExtraView,
     ExtraText,
     TextLink,
-    TextLinkContent
+    TextLinkContent,
+    PageTitle3
 
 } from './../components/styles';
 
@@ -48,9 +49,11 @@ const Menu = () => {
         <KeyboardAvoidingWrapper><StyledContainer>
             <StatusBar style="dark" />
             <InnerContainer>
-                <PageLogo resizeMode="cover" source={require('./../assets/img/Logo.png')}/>
-                <PageTitle>Platonix</PageTitle>
+                <PageLogo resizeMode="cover" source={require('./../assets/img/platonix.png')}/>
                 <Line />
+                <PageTitle3>Menu Page</PageTitle3>
+                <Line />
+                
                 
 
                 <Formik
@@ -60,24 +63,22 @@ const Menu = () => {
                     }}
                 >{({handleChange, handleBlur, handleSubmit, values}) => (<StyledFormArea>
                     
-                    <PicturesLogo resizeMode="cover" source={require('./../assets/img/ImageProcessing.png')}/>
+                    <PicturesLogo resizeMode="contain" source={require('./../assets/img/ImageProcessing.png')}/>
                     <StyledButton onPress={handleSubmit}>
                         <ButtonText>Image Processing</ButtonText>
                     </StyledButton>
 
-                    <PicturesLogo resizeMode="cover" source={require('./../assets/img/DataAnalytics.png')}/>
+                    <PicturesLogo resizeMode="contain" source={require('./../assets/img/DataAnalytics.png')}/>
                     <StyledButton onPress={handleSubmit}>
                         <ButtonText>Data Analytics</ButtonText>
                     </StyledButton>
 
-                    <PicturesLogo resizeMode="cover" source={require('./../assets/img/TextEntry.png')}/>
+                    <PicturesLogo resizeMode="contain" source={require('./../assets/img/TextEntry.png')}/>
                     <StyledButton onPress={handleSubmit}>
                         <ButtonText>Text-Entry Processing</ButtonText>
                     </StyledButton>
                     
-                    <StyledButton onPress={handleSubmit}>
-                        <ButtonText>Text-Entry Processing</ButtonText>
-                    </StyledButton>
+                    
                    
                     
                 </StyledFormArea>

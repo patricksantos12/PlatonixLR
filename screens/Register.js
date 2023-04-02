@@ -27,7 +27,9 @@ import {
     ExtraView,
     ExtraText,
     TextLink,
-    TextLinkContent
+    TextLinkContent,
+    PageTitle1,
+    SubTitle1
 
 } from './../components/styles';
 
@@ -36,6 +38,8 @@ import {View} from 'react-native';
 // colors
 const {brand, darkLight, primary} = Colors;
 
+// keyboard avoiding view
+import KeyboardAvoidingWrapper from '../components/KeyboardAvoidingWrapper';
 
 
 const Register = () => {
@@ -43,12 +47,14 @@ const Register = () => {
     const [hidePassword, setHidePassword] = useState(true);
 
     return (
+        <KeyboardAvoidingWrapper>
         <StyledContainer>
             <StatusBar style="dark" />
             <InnerContainer>
            
-                <PageTitle>Platonix</PageTitle>
-                <SubTitle>Account Register</SubTitle>
+                <PageTitle1>Platonix</PageTitle1>
+                <Line />
+                <SubTitle1>Account Register</SubTitle1>
 
                 <Formik
                     initialValues={{ownername: '', serialnumber: '', password: '', confirmPassword: '' }}
@@ -67,7 +73,7 @@ const Register = () => {
                     />
 
                         <MyTextInput 
-                        label="Car Owner Name"
+                        label="Name"
                         icon="person"
                         placeholder="Enter Name"
                         placeholderTextColor={darkLight}
@@ -121,6 +127,7 @@ const Register = () => {
                 </Formik>
             </InnerContainer>
         </StyledContainer>
+        </KeyboardAvoidingWrapper>
     );
 };
 

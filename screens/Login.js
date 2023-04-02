@@ -47,9 +47,10 @@ const Login = () => {
         <KeyboardAvoidingWrapper><StyledContainer>
             <StatusBar style="dark" />
             <InnerContainer>
-                <PageLogo resizeMode="cover" source={require('./../assets/img/Logo.png')}/>
-                <PageTitle>Platonix</PageTitle>
-                <SubTitle>Device Login</SubTitle>
+                <PageLogo resizeMode="cover" source={require('./../assets/img/platonix.png')}/>
+                <PageTitle>Device Log in</PageTitle>
+                
+                
 
                 <Formik
                     initialValues={{serialnumber: '', password: '', enterName: ''}}

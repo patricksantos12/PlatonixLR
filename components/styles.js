@@ -36,17 +36,26 @@ export const WelcomeContainer = styled(InnerContainer)`
 `;
 
 export const PageLogo = styled.Image`
-    width: 250px;
-    height: 200px;
-    margin: auto;
+    width: 300px;
+    height: 250px;
+    align-self: center;
+    resizeMode: contain;
+    padding: 25px;
+    
 `;
 
 export const PicturesLogo = styled.Image`
-    width: 250px;
-    height: 250px;
+    width: 130px;
+    height: 130px;
     margin: auto;
-`;
 
+`;
+export const HelpLogo = styled.Image`
+    width: 200px;
+    height: 200px;
+    margin: auto;
+
+`;
 
 export const Avatar = styled.Image`
     width: 100px;
@@ -69,11 +78,45 @@ export const PageTitle = styled.Text`
     text-align: center;
     font-weight: bold;
     color: ${brand};
-    padding: 10px;
+    padding-bottom: 50px;
+    padding-top: 0px;
 
     ${(props) => props.welcome && 'font-size 35px;'}
 
 `;
+export const PageTitle1 = styled.Text`
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: ${brand};
+    padding-top: 50px;
+
+    ${(props) => props.welcome && 'font-size 35px;'}
+
+`;
+
+export const PageTitle2 = styled.Text`
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: ${brand};
+    padding-top: 50px;
+
+    ${(props) => props.welcome && 'font-size 35px;'}
+
+`;
+export const PageTitle3 = styled.Text`
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: ${brand};
+    padding-top: 0px;
+    padding-bottom: 10px;
+
+    ${(props) => props.welcome && 'font-size 35px;'}
+
+`;
+
 
 export const SubTitle = styled.Text`
     font-size: 18px;
@@ -86,6 +129,21 @@ export const SubTitle = styled.Text`
 
     ${(props) => props.welcome && 'margin-bottom: 5px; font-weight:normal;'}
 `;
+
+export const SubTitle1 = styled.Text`
+    font-size: 18px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: ${tertiary};
+    margin: auto;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    
+
+    ${(props) => props.welcome && 'margin-bottom: 5px; font-weight:normal;'}
+`;
+
 
 export const StyledFormArea = styled.View`
     width: 90%;
