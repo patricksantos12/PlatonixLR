@@ -42,7 +42,7 @@ const {brand, darkLight, primary} = Colors;
 import KeyboardAvoidingWrapper from '../components/KeyboardAvoidingWrapper';
 
 
-const Register = () => {
+const Register = ({navigation}) => {
 
     const [hidePassword, setHidePassword] = useState(true);
 
@@ -60,6 +60,7 @@ const Register = () => {
                     initialValues={{ownername: '', serialnumber: '', password: '', confirmPassword: '' }}
                     onSubmit={(values) => {
                         console.log(values);
+                        navigation.navigate('Welcome')
                     }}
                 >{({handleChange, handleBlur, handleSubmit, values}) => (<StyledFormArea>
                     <MyTextInput 
@@ -118,7 +119,7 @@ const Register = () => {
                     <Line />
                     <ExtraView>
                         <ExtraText>Already Registered? </ExtraText>
-                        <TextLink>
+                        <TextLink onPress={() => navigation.navigate('Login')}>
                             <TextLinkContent>Access Device Here</TextLinkContent>
                         </TextLink>
                     </ExtraView>

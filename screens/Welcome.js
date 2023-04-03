@@ -41,7 +41,7 @@ const {brand, darkLight, primary} = Colors;
 // keyboard avoiding view
 import KeyboardAvoidingWrapper from '../components/KeyboardAvoidingWrapper';
 
-const Menu = () => {
+const Menu = ({navigation}) => {
 
     const [hidePassword, setHidePassword] = useState(true);
 
@@ -77,8 +77,10 @@ const Menu = () => {
                     <StyledButton onPress={handleSubmit}>
                         <ButtonText>Text-Entry Processing</ButtonText>
                     </StyledButton>
-                    
-                    
+                    <Line />
+                    <StyledButton onPress={() => {navigation.navigate('Login')}}>
+                        <ButtonText>Logout</ButtonText>
+                    </StyledButton>
                    
                     
                 </StyledFormArea>
