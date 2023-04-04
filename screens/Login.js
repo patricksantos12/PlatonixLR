@@ -54,9 +54,16 @@ const Login = ({navigation}) => {
 
                 <Formik
                     initialValues={{serialnumber: '', password: '', enterName: ''}}
-                    onSubmit={(values) => {
-                        console.log(values);
-                        navigation.navigate("Welcome");
+                    onSubmit={(values, { setSubmitting, resetForm }) => {
+                        if (values.serialnumber === 'ANP-766' && values.password === '123' && values.enterName === 'Private User') {
+                            console.log(values);
+                            navigation.navigate("Welcome");
+                            resetForm();
+                        } else {
+                            alert('Invalid device serial number, password, or name');
+                            navigation.navigate("Login");
+                        }
+                        setSubmitting(false);
                     }}
                 >{({handleChange, handleBlur, handleSubmit, values}) => (<StyledFormArea>
                     <MyTextInput 
