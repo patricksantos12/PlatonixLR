@@ -60,7 +60,7 @@ const Login = ({navigation}) => {
                             navigation.navigate("Welcome");
                             resetForm();
                         } else {
-                            alert('Invalid device serial number, password, or name');
+                            alert('Invalid Device Serial Number, Password, or Name');
                             navigation.navigate("Login");
                         }
                         setSubmitting(false);
